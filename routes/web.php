@@ -49,3 +49,12 @@ use Illuminate\Support\Facades\Route;
              'slug' => '[a-z0-9][a-z0-9\-]*'
            ])
            ->name('pages.show');
+
+           // ROUTES DES TAGS ----------------------------------------
+ use App\Http\Controllers\TagsController;
+   Route::get('/tags/{tag}/{slug}', [TagsController::class, 'show'])
+          ->where ([
+            'tag'  => '[1-9][0-9]*',
+            'slug' => '[a-z0-9][a-z0-9\-]*'
+          ])
+          ->name('tags.show');
